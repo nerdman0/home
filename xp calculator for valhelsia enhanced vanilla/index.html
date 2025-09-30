@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>XP Calculator for V:EV</title>
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <p>The first input is to calculate the xp needed to level up once at the inputted level.</p>
+  <p>The second input is to calculate the xp needed to get to the specified level from 0.</p>
+  <p>The third input is to calculate the xp needed to get from the level in the first field to the level in the second field.</p>
+  <p>All inputs should be integers, if they are not they will be rounded down (except the multiplier).</p>
+  <p>Levelz does allow negative parameters but I do not, because they cause issues and if you have negative parameters something is wrong with you (they will get set to 0).</p>
+  <br>
+  <p>The equation parameters (will default to Valhelsia: Enhanced Vanilla parameters if blank).</p>
+  <input type="number" name="Multiplier" placeholder="Multiplier" value="0.07" id="Multiplier" min=0></input>
+  <label id="Lultiplier">Current multiplier is 0.07</label>
+  <br>
+  <input type="number" name="Base" placeholder="Base" value="50" id="Base" min=0></input>
+  <label id="Lase">Current base is 50</label>
+  <br>
+  <input type="number" name="Max_XP" placeholder="Max XP" value="10000" id="Max_XP" min=0></input>
+  <label id="Lax_XP">Current max XP is 10000</label>
+  <br>
+  <input type="number" name="Max_Level" placeholder="Max Level" value="40" id="Max_Level" min=0></input>
+  <label id="Lax_Level">Current max level is 40</label>
+  <br>
+  <input type="number" name="Exponent" placeholder="Exponent" value="2" id="Exponent" min=0></input>
+  <label id="Lexponent">Current exponent is 2</label>
+  <br>
+  <button onclick="change_stats()">Inject Parameters</button>
+  <p>Current equation is:</p>
+  <p id="Equation">Floor(level<sup>2</sup>*0.07+50)</p>
+  <p id="Caps">With a maximum output of 10000 XP and a maximum input of level 479.</p>
+  <br>
+  <br>
+  <p>XP to level up.</p>
+  <input type="number" name="Level XP" placeholder="Your Level" id="LevelXP"></input>
+  <button onclick="function1()">Calculate</button>
+  <p id="output1"></p>
+  <p>XP needed to get to this level from 0.</p>
+  <input type="number" name="Level to reach" placeholder="Level you want" id="LevelToReach"></input>
+  <button onclick="function2()">Calculate</button>
+  <p id="output2"></p>
+  <p>XP needed to get to this level from other level.</p>
+  <input type="number" name="Your Level" placeholder="Your Level" id="YourLevel"></input>
+  <input type="number" name="Level to reach" placeholder="Level to reach" id="LevelToReach2"></input>
+  <button onclick="function3()">Calculate</button>
+  <p id="output3"></p>
+</body>
+
+</html>
